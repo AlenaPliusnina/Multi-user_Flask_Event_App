@@ -64,7 +64,7 @@
  
   ![Registration form](/screenshots/screenshot_2.png)
 
-3. '/login' - форма регистрации новых пользователей
+3. '/login' - форма входа зарегестрированных пользователей
  
   ![Log in form](/screenshots/screenshot_3.png)
 
