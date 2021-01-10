@@ -56,9 +56,35 @@
 
 Описание функционала:
 
-1. '/' - 
+1. '/' - при первом переходи по этому пути вам будет предложено войти или заргестрироваться.
 
- ![](/screenshots/screen_1.png)
+ ![Index page](/screenshots/screenshot_1.png)
+
+2. '/register' - форма регистрации новых пользователей
+ 
+  ![Registration form](/screenshots/screenshot_2.png)
+
+3. '/login' - форма регистрации новых пользователей
+ 
+  ![Log in form](/screenshots/screenshot_3.png)
+
+4. '/' - после регистрации и входа в аккаунт пользователе будет перенаправлен по дпнному пути и перед ним появятся карточки со всем событиями
+
+  ![Events cards](/screenshots/screenshot_4.png)
+
+4. '/event/create' - форма создания нового события
+
+  ![Event create form](/screenshots/screenshot_5.png)
+  
+5. '/all_my_events' - все события созданные пользователем
+
+  ![Event create form](/screenshots/screenshot_6.png)
+
+5. '/event/update/<int:id>' - обновления данных о событии (по id) созданном пользователем
+
+  ![Event update form](/screenshots/screenshot_7.png)
+
+6. '/event/delete/<int:id>' - удаление события (по id) созданного пользователем
 
 
 
