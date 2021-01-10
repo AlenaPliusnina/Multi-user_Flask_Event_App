@@ -14,14 +14,13 @@
         </p>
         <p>
             {{ form.body.label }}<br>
-            {{ form.body(value=event.body) }}<br>
+            {{ form.body(placeholder=event.body) }}<br>
             {% for error in form.body.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>
             {{ form.start_date.label }}<br>
-<!--            {{ form.start_date }}<br>-->
             {{ form.start_date(value=event.start_date) }}<br>
             {% for error in form.start_date.errors %}
             <span style="color: red;">[{{ error }}]</span>
@@ -29,7 +28,6 @@
         </p>
         <p>
             {{ form.end_date.label }}<br>
-<!--            {{ form.end_date }}<br>-->
             {{ form.end_date(value=event.end_date) }}
             {% for error in form.end_date.errors %}
             <span style="color: red;">[{{ error }}]</span>
