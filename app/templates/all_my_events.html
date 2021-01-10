@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <div class="d-flex justify-content-center flex-wrap">
+        {% for event in events %}
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Author: {{ event.author_email }}</h6>
+                    <p class="card-text">Description: {{ event.body }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Start: {{ event.start_date }}</li>
+                        <li class="list-group-item">End: {{ event.end_date }}</li>
+                    </ul>
+                    <a href="{{ url_for('update_event', id=event.id) }}" class="card-link">Update event</a>
+                    <a href="{{ url_for('delete_event', id=event.id) }}" class="card-link">Delete event</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock %}

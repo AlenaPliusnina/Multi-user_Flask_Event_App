@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+    <div>
+        <h3 class="text-center mt-5 mb-3">Hi, {{ current_user.username }}!</h3>
+        <h4 class="text-center mb-5">Here you can see all events.</h4>
+        <div class="d-flex justify-content-center flex-wrap">
+        {% for event in events %}
+            <div class="card m-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Author: {{ event.author_email }}</h6>
+                    <p class="card-text">Description: {{ event.body }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Start: {{ event.start_date }}</li>
+                        <li class="list-group-item">End: {{ event.end_date }}</li>
+                    </ul>
+<!--                    {% if event.author_email == current_user.email %}-->
+<!--                        <a href="/event/update" class="card-link">Card link</a>-->
+<!--                        <a href="/event/create" class="card-link">Another link</a>-->
+<!--                    {% endif %}-->
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <div class="d-flex justify-content-center flex-wrap mt-5 mb-5" style="width: 50vw; margin: auto;">
+        <h2 class="text-center mb-3">Multi-user event scheduling service</h2>
+        <h5 class="text-center">To work with the service, you need to <a href="/register">register</a> or <a href="/login">log in</a></h5>
+    </div>
+    {% endif %}
+{% endblock %}
